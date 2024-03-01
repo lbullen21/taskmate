@@ -16,7 +16,7 @@ export const TaskList = (props) => {
   }
 
   return (
-    <>
+    <div className="tasklist">
       <h1>Task List {props.name} </h1>
       <ul>
         <button onClick={() => setShow(!show)}>Toggle</button>
@@ -32,6 +32,6 @@ export const TaskList = (props) => {
           iaculis mauris.
         </p>
       </BoxCard>
-    </>
+    </div>
   );
 };

@@ -15,6 +15,20 @@
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+button {
+  padding: 5px 10px;
+  border: 0px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: darkslateblue;
+  color: #ffffff;
+}
+
 /* themes */
 .light {
   background-color: #ffffff;

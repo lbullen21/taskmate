@@ -92,6 +92,10 @@ header .themeSelector .activeTheme {
   background-color: #03b056;
 }
 
+.delete {
+  background-color: #ff3b3b;
+}
+
 .showTask {
   padding: 20px 15px;
   border-radius: 5px;
