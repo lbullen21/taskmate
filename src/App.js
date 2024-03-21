@@ -1,16 +1,17 @@
 import "./App.css";
+import { useState } from "react";
 import { Header } from "./components/Header";
-import { TaskList } from "./components/TaskList";
-import { Footer } from "./components/Footer";
 import { AddTask } from "./components/AddTask";
+import { ShowTask } from "./components/ShowTask";
 
 export const App = () => {
+  const [tasks, setTasks] = useState([]);
   return (
     <div className="App">
       <Header />
-      <AddTask />
-      <TaskList />
-      <Footer />
+      <main>
+        <AddTask tasks={tasks} setTasks={setTasks} />
+      </main>
     </div>
   );
 };

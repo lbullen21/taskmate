@@ -2,8 +2,18 @@ import Logo from "../assets/logo.svg";
 export const Header = () => {
   return (
     <header>
-      <img src={Logo} alt="" />
-      <a href="/">Home</a>
+      <div className="logo">
+        <img src={Logo} alt="Taskmate Logo" />
+        <span>Taskamate</span>
+      </div>
+      <div className="themSelector">
+        <span className="light"></span>
+        <span className="medium"></span>
+        <span className="dark"></span>
+        <span className="gOne"></span>
+        <span className="gTwo"></span>
+        <span className="gThree"></span>
+      </div>
     </header>
   );
 };
