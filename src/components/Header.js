@@ -6,7 +6,7 @@ export const Header = () => {
         <img src={Logo} alt="Taskmate Logo" />
         <span>Taskamate</span>
       </div>
-      <div className="themSelector">
+      <div className="themeSelector">
         <span className="light"></span>
         <span className="medium"></span>
         <span className="dark"></span>

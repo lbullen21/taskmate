@@ -1,4 +1,5 @@
 import "./App.css";
+import "./index.css";
 import { useState } from "react";
 import { Header } from "./components/Header";
 import { AddTask } from "./components/AddTask";
@@ -11,6 +12,7 @@ export const App = () => {
       <Header />
       <main>
         <AddTask tasks={tasks} setTasks={setTasks} />
+        <ShowTask />
       </main>
     </div>
   );
