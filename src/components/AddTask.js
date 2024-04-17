@@ -1,14 +1,30 @@
-export const AddTask = ({ tasklist, setTasklist }) => {
+export const AddTask = ({ tasklist, setTasklist, task, setTask }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target.task.value);
-    const newTask = {
-      id: Math.floor(Math.random() * 1000),
-      name: event.target.task.value,
-      time: new Date().toLocaleString(),
-    };
-    setTasklist([...tasklist, newTask]);
-    event.target.task.value = "";
+    if (task.id) {
+      const date = new Date();
+      const updateTasklist = tasklist.map((todo) =>
+        todo.id === task.id
+          ? {
+              id: task.id,
+              name: task.name,
+              time: `${date.toLocaleString()}`,
+            }
+          : todo
+      );
+      setTasklist(updateTasklist);
+      setTask({});
+    } else {
+      console.log(event.target.task.value);
+      const date = new Date();
+      const newTask = {
+        id: date.getTime(),
+        name: event.target.task.value,
+        time: `${date.toLocaleString()}`,
+      };
+      setTasklist([...tasklist, newTask]);
+      setTask({});
+    }
   };
   return (
     <section className="addTask">
@@ -16,8 +32,10 @@ export const AddTask = ({ tasklist, setTasklist }) => {
         <input
           type="type"
           name="task"
+          value={task.name || ""}
           autoComplete="off"
           placeholder="add task"
+          onChange={(event) => setTask({ ...task, name: event.target.value })}
         />
         <button type="submit">Add</button>
       </form>
